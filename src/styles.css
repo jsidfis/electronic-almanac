@@ -1,0 +1,128 @@
+:root {
+  font-family: "Microsoft YaHei", "PingFang SC", sans-serif;
+  color: #3b2b20;
+  background: #dfc69e;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+  margin: 0;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+.app {
+  min-height: 100vh;
+  padding: 24px;
+}
+
+.paper-shell {
+  position: relative;
+  overflow: hidden;
+  color: #3b2b20;
+  background-color: #dfc69e;
+  background-image:
+    linear-gradient(90deg, rgb(90 60 35 / 3.2%) 1px, transparent 1px),
+    linear-gradient(rgb(90 60 35 / 3.2%) 1px, transparent 1px);
+  background-size: 12px 12px;
+  border: 1px solid #b89768;
+}
+
+.paper-shell::after {
+  content: "";
+  position: absolute;
+  inset: 10px;
+  border: 1px solid rgb(109 71 42 / 24%);
+  pointer-events: none;
+}
+
+.tray-card { display: flex; flex-direction: column; height: 500px; min-height: 500px; padding: 24px; }
+.paper-header, .paper-footer { position: relative; z-index: 1; display: flex; align-items: center; justify-content: space-between; color: #6d4d34; font-size: 12px; }
+.seal { display: inline-flex; width: 32px; height: 32px; align-items: center; justify-content: center; border: 2px solid #8c2822; color: #8c2822; font-family: serif; font-weight: 700; }
+.date-hero { position: relative; z-index: 1; margin: 28px 0 2px; color: #8c2822; font: 76px/.95 Georgia, serif; }
+.date-meta, .lunar-meta, .card-note, .section-label, .tag-row { position: relative; z-index: 1; }
+.date-meta, .lunar-meta { margin: 4px 0; font-size: 14px; line-height: 1.6; }
+.paper-rule { position: relative; z-index: 1; height: 1px; margin: 18px 0; background: #b8986d; }
+.section-label { margin: 0 0 9px; color: #715239; font-size: 11px; letter-spacing: .14em; }
+.tag-row { display: flex; flex-wrap: wrap; gap: 7px; }
+.tag { padding: 6px 9px; border: 1px solid #a8875d; background: rgb(255 250 235 / 22%); font-size: 12px; }
+.tag--avoid { color: #79231f; }
+.card-note { overflow: hidden; color: #644a36; font-size: 12px; line-height: 1.7; text-overflow: ellipsis; white-space: nowrap; }
+.paper-footer { flex: 0 0 auto; margin-top: auto; }
+.paper-button { position: relative; z-index: 2; border: 0; padding: 9px 14px; color: #f5e8d4; background: #432e21; cursor: pointer; }
+.almanac-status { position: relative; z-index: 1; line-height: 1.7; }
+
+.daily-detail { min-height: 100vh; padding: 28px 32px; overflow-y: auto; }
+.detail-header, .detail-date, .detail-yi-ji, .detail-section, .detail-disclaimer { position: relative; z-index: 1; }
+.detail-header { display: flex; align-items: center; justify-content: space-between; color: #6d4d34; }
+.detail-title { display: inline-flex; align-items: center; gap: 10px; font-size: 13px; letter-spacing: .08em; }
+.detail-settings { border: 0; padding: 6px 0; color: #6d4d34; background: transparent; cursor: pointer; }
+.detail-date { display: flex; align-items: center; gap: 22px; padding: 26px 0 8px; }
+.detail-day { flex: 0 0 auto; margin: 0; color: #8c2822; font: 84px/.85 Georgia, serif; }
+.detail-date h1 { margin: 0 0 8px; font: 26px/1.2 Georgia, "Microsoft YaHei", serif; }
+.detail-date p { margin: 4px 0; color: #644a36; font-size: 13px; line-height: 1.6; }
+.detail-date .detail-note { color: #8c2822; }
+.detail-yi-ji { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+.detail-fact { min-height: 110px; padding: 16px; border: 1px solid #b89768; background: rgb(255 250 235 / 20%); }
+.detail-fact h2, .detail-section h2 { margin: 0; color: #5a3f2c; font-size: 13px; letter-spacing: .12em; }
+.detail-fact p { margin: 12px 0 0; line-height: 1.8; }
+.detail-fact--suitable h2 { color: #354825; }
+.detail-fact--avoid h2 { color: #79231f; }
+.detail-section { margin-top: 24px; }
+.detail-section > p { margin: 10px 0 0; line-height: 1.7; }
+.detail-clash { padding: 14px 16px; border-left: 3px solid #8c2822; background: rgb(255 250 235 / 17%); }
+.detail-hours { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; margin-top: 12px; }
+.detail-hour { min-width: 0; padding: 12px; border: 1px solid #b89768; overflow-wrap: anywhere; background: rgb(255 250 235 / 20%); }
+.detail-hour h3 { margin: 0; font-size: 14px; }
+.detail-hour p { margin: 7px 0 0; color: #644a36; font-size: 12px; line-height: 1.55; }
+.detail-hour .detail-hour-range { margin-top: 3px; color: #5a3f2c; }
+.detail-hour span { display: block; margin-bottom: 2px; font-size: 11px; letter-spacing: .1em; }
+.detail-hour .detail-hour-luck { display: inline; margin: 0 0 0 4px; font-size: 12px; }
+.detail-hour--auspicious { border-color: #829060; }
+.detail-hour--auspicious h3, .detail-hour--auspicious span { color: #354825; }
+.detail-hour--neutral { border-color: #a8875d; }
+.detail-hour--neutral h3, .detail-hour--neutral span { color: #5a3f2c; }
+.detail-hour--inauspicious { border-color: #aa5a50; }
+.detail-hour--inauspicious h3, .detail-hour--inauspicious span { color: #79231f; }
+.detail-disclaimer { margin: 28px 0 0; color: #5a3f2c; font-size: 12px; line-height: 1.7; }
+
+@media (max-width: 480px) {
+  .daily-detail { padding: 20px; }
+  .detail-date { flex-wrap: wrap; gap: 14px; padding-top: 20px; }
+  .detail-day { font-size: 64px; }
+  .detail-date h1 { font-size: 22px; }
+  .detail-yi-ji, .detail-hours { grid-template-columns: 1fr; }
+  .detail-fact { min-height: 0; }
+}
+
+.modal::backdrop { background: rgb(59 43 32 / 58%); }
+.first-run-prompt__dialog { width: min(100%, 420px); margin: auto; padding: 24px; color: #3b2b20; background: #f5e8d4; border: 1px solid #8c6c4d; box-shadow: 0 12px 36px rgb(43 29 18 / 34%); }
+.first-run-prompt__dialog h2 { margin: 0; font: 23px/1.35 Georgia, "Microsoft YaHei", serif; }
+.first-run-prompt__dialog p { margin: 14px 0 0; color: #5a3f2c; line-height: 1.7; }
+.first-run-prompt__dialog [role="alert"], .settings-view__error { color: #79231f; }
+.first-run-prompt__actions { display: flex; justify-content: flex-end; gap: 10px; margin-top: 22px; }
+.first-run-prompt__actions button { border: 1px solid #6d4d34; padding: 9px 14px; color: #f5e8d4; background: #432e21; cursor: pointer; }
+.first-run-prompt__actions button + button { color: #432e21; background: transparent; }
+
+.settings-view { min-height: 100vh; padding: 28px 32px; }
+.settings-view__back { position: relative; z-index: 1; border: 0; padding: 6px 0; color: #6d4d34; background: transparent; cursor: pointer; }
+.settings-view h1, .settings-view__section, .settings-view__error { position: relative; z-index: 1; }
+.settings-view h1 { margin: 22px 0; color: #5a3f2c; font: 28px/1.2 Georgia, "Microsoft YaHei", serif; }
+.settings-view__section { border-top: 1px solid #b89768; border-bottom: 1px solid #b89768; padding: 16px 0; }
+.settings-view__row { display: flex; align-items: center; justify-content: space-between; gap: 16px; color: #3b2b20; }
+.settings-view__row input { width: 18px; height: 18px; accent-color: #8c2822; }
+.settings-view__section p, .settings-view__about h2 { margin: 8px 0 0; color: #644a36; font-size: 12px; line-height: 1.7; }
+.settings-view__error { margin: 14px 0; }
+.settings-view__about { margin-top: 22px; }
+.settings-view__about h2 { margin: 0; color: #5a3f2c; font-size: 14px; letter-spacing: .08em; }
